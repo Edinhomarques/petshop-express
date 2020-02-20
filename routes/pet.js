@@ -1,11 +1,11 @@
 const express = require('express');
-
+const petController = require('../controllers/petController')
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    res.send('Petshop DH em express (agora da pra vender)')
-});
+router.get('/', petController.index);
+router.get('/add/:nome', petController.add);
+router.get('/search/:nome', petController.search);
 
 
 
